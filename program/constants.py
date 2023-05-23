@@ -31,7 +31,7 @@ CLOSE_AT_ZSCORE_CROSS = True
 
 # Ethereum address
 #check .env for reference to this
-ETHEREUM_ADDRESS = '0x62967ddADD77B8d1dB766cd880fCbF9431E6Ee18'
+ETHEREUM_ADDRESS = config("ETHEREUM_ADDRESS")
 
 
 # KEYS - DEVELOPMENT
