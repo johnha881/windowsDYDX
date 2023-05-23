@@ -19,7 +19,7 @@ def format_number(curr_num, match_num):
         return f"{int(curr_num)}"
 
 
-# Format time
+# Format time - get current time and change it for dydx
 def format_time(timestamp):
     return timestamp.replace(microsecond = 0).isoformat()
 

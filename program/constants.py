@@ -30,7 +30,9 @@ USD_MIN_COLLATERAL = 1800
 CLOSE_AT_ZSCORE_CROSS = True
 
 # Ethereum address
+#check .env for reference to this
 ETHEREUM_ADDRESS = '0x62967ddADD77B8d1dB766cd880fCbF9431E6Ee18'
+
 
 # KEYS - DEVELOPMENT
 # Must be on Testnet in DYDX
