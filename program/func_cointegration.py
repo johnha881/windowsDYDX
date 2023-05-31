@@ -29,6 +29,7 @@ def calculate_zscore(spread):
   return zscore
 
 # Calculate Cointegration
+#CHANGING NP.FLOAT TO
 def calculate_cointegration(series_1, series_2):
   series_1 = np.array(series_1).astype(np.float)
   series_2 = np.array(series_2).astype(np.float)
@@ -60,9 +61,11 @@ def store_cointegration_results(df_market_prices):
     #     # Get Quote Pair
         for quote_market in markets[index +1:]:
             series_2 = df_market_prices[quote_market].values.astype(float).tolist()
+            
         
       # Check cointegration
             coint_flag, hedge_ratio, half_life = calculate_cointegration(series_1, series_2)
+            
 
       # Log pair
             if coint_flag == 1 and half_life <= MAX_HALF_LIFE and half_life > 0:
@@ -71,13 +74,14 @@ def store_cointegration_results(df_market_prices):
                     "quote_market": quote_market,
                     "hedge_ratio": hedge_ratio,
                     "half_life": half_life,
+                    
                 })
 
     # Create and save DataFrame
     df_criteria_met = pd.DataFrame(criteria_met_pairs)
     df_criteria_met.to_csv("cointegrated_pairs.csv")
     del df_criteria_met
-
     # Return result
     print("Cointegrated pairs successfully saved")
     return "saved"
+
